@@ -14,11 +14,11 @@ function handleFormSubmit(event) {
         alert("Please enter a city name");
     }
 }
-// need to include displayWeather funciton and displayForecast function here to create the cards for the weather and forecast
+
 function displayForecast(data) {
     var cityCard = document.querySelector('#city-forecast');
     var temp = data.main.temp;
-    var card = document.createElement('div');
+    var card = document.createElement('card');
     card.innerHTML = `
     <p>Temperature: ${temp}</p>
     <p>Wind: ${data.wind.speed} MPH</p>
@@ -30,7 +30,7 @@ function displayForecast(data) {
 function displayWeather(data) {
     var weatherCard = document.querySelector('#five-day');
     var temp = data.main.temp;
-    var card = document.createElement('div');
+    var card = document.createElement('card');
     card.innerHTML = `
     <p>Temperature: ${temp}</p>
     <p>Wind: ${data.wind.speed} MPH</p>
