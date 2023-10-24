@@ -14,21 +14,19 @@
         <h1 class="flex text-2xl">Weather Dashboard</h1>
     </div>
     <div class="container">
-        <div class="container flex flex-col absolute-left-0">
+        <div>
             <form class="form-input" onsubmit="handleFormSubmit(event)">
                 <label for="search-input">Search for a City:</label>
                 <input id="search-input" class="w-50 border-slate-300 hover:border-indigo-300" type="text"
                     placeholder="San Diego">
                 <button type="submit">Search</button>
             </form>
-            <!-- <p>Search for a City:</p>
-            <input class="form-input w-50 border-slate-300 hover:border-indigo-300" type="text" placeholder="San Diego"> -->
-        </div>
-        <div class="container flex-col relative-right">
-            <p id="city-forecast">Display Temp, wind, and humidity here</p>
         </div>
         <div>
-            <p id="five-day">5-Day Forecast</p>
+            <p id="city-forecast"></p>
+        </div>
+        <div>
+            <p id="five-day"></p>
         </div>
     </div>
     <script src="main/assets/js/script.js"></script>

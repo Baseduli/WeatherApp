@@ -3,6 +3,7 @@ var APIKey = "a8fe8e270b30883ded902415fd9d7831";
 var temp;
 var wind;
 var humidity;
+var name;
 
 
 function handleFormSubmit(event) {
@@ -30,6 +31,8 @@ function getWeather(city) {
                     temp = data.main.temp;
                     wind = data.wind.speed;
                     humidity = data.main.humidity;
+                    name = data.name;
+                    console.log(data);
                     displayWeather(data);
                     getForecast(data.coord.lat, data.coord.lon);
                 });
@@ -72,7 +75,7 @@ function displayForecast(data) {
         temp = data.list[forecastData[i]].main.temp;
         humidity = data.list[forecastData[i]].main.humidity;
         wind = data.list[forecastData[i]].wind.speed;
-        var cityCard = document.querySelector('#city-forecast');
+        var cityCard = document.querySelector('#five-day');
         var card = document.createElement('div');
         card.classList.add('forecast-card');
         card.innerHTML = `
@@ -86,10 +89,11 @@ function displayForecast(data) {
 }
 
 function displayWeather(data) {
-    var weatherCard = document.querySelector('#five-day');
+    var weatherCard = document.querySelector('#city-forecast');
     var card = document.createElement('div');
-    // div.classList.add('forecast-card');
+    card.classList.add('forecast-box');
     card.innerHTML = `
+    <h2>${name}</h2>
     <p>Temperature: ${temp}</p>
     <p>Wind: ${wind} MPH</p>
     <p>Humidity: ${humidity} %</p>

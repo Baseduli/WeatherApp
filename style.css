@@ -1,5 +1,11 @@
 .forecast-card {
     border-radius: 0%;
+    color:white;
     border: 1px solid #000000;
-    background-color: aquamarine;
+    background-color: #323d4f;
+}
+
+.forecast-box {
+    border-radius: 0%;
+    border: 1px solid #000000;
 }
