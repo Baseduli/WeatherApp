@@ -74,7 +74,7 @@ function displayForecast(data) {
         wind = data.list[forecastData[i]].wind.speed;
         var cityCard = document.querySelector('#city-forecast');
         var card = document.createElement('div');
-        // div.classList.add('forecast-box');
+        card.classList.add('forecast-card');
         card.innerHTML = `
         <p>Temperature: ${temp}</p>
         <p>Wind: ${wind} MPH</p>
