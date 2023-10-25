@@ -4,6 +4,7 @@ var temp;
 var wind;
 var humidity;
 var name;
+var time;
 
 
 function handleFormSubmit(event) {
@@ -32,6 +33,7 @@ function getWeather(city) {
                     wind = data.wind.speed;
                     humidity = data.main.humidity;
                     name = data.name;
+                    time = data.dt_text;
                     console.log(data);
                     displayWeather(data);
                     getForecast(data.coord.lat, data.coord.lon);
@@ -79,6 +81,7 @@ function displayForecast(data) {
         var card = document.createElement('div');
         card.classList.add('forecast-card');
         card.innerHTML = `
+        <h2>${time}</h2>
         <p>Temperature: ${temp}</p>
         <p>Wind: ${wind} MPH</p>
         <p>Humidity: ${humidity} %</p>

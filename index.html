@@ -10,17 +10,19 @@
 </head>
 
 <body>
-    <div class="flex justify-center text-white py-5 bg-gradient-to-r from-blue-600 to-blue-900 ">
-        <h1 class="flex text-4xl ">Weather Dashboard</h1>
+    <div class="flex">
+        <div class="flex justify-center text-white py-5 bg-gradient-to-r from-blue-600 to-blue-900 w-full">
+            <h1 class="flex text-4xl ">Weather Dashboard</h1>
+        </div>
     </div>
-    <div class="container">
-        <div>
+        <div class="flex">
+            <div class="flex-col">
             <form class="form-input" onsubmit="handleFormSubmit(event)">
                 <label for="search-input" class="text-4xl">Search for a City:</label>
-                <input id="search-input" class="border border-slate-400" type="text"
-                    placeholder="San Diego">
-                <button type="submit" >Search</button>
+                <input id="search-input" class="border border-slate-400" type="text" placeholder="San Diego">
+                <button type="submit">Search</button>
             </form>
+            </div>
         </div>
         <div>
             <p id="city-forecast"></p>
@@ -28,6 +30,7 @@
         <div>
             <p id="five-day">5-Day Forecast:</p>
         </div>
+    </div>
     </div>
     <script src="main/assets/js/script.js"></script>
 </body>
