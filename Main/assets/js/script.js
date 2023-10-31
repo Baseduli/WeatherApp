@@ -3,7 +3,6 @@ var APIKey = "a8fe8e270b30883ded902415fd9d7831";
 var temp;
 var wind;
 var humidity;
-var name;
 var time;
 
 
@@ -12,6 +11,7 @@ function handleFormSubmit(event) {
 
     var searchInputVal = document.querySelector("#search-input").value;
     var searchInputValTrimmed = searchInputVal.trim();
+    localStorage.setItem(searchInputValTrimmed, searchInputValTrimmed);
 
     if (searchInputValTrimmed) {
         getWeather(searchInputValTrimmed);
@@ -20,6 +20,7 @@ function handleFormSubmit(event) {
         alert("Please enter a city name");
     }
 }
+
 
 
 function getWeather(city) {
@@ -32,8 +33,7 @@ function getWeather(city) {
                     temp = data.main.temp;
                     wind = data.wind.speed;
                     humidity = data.main.humidity;
-                    name = data.name;
-                    time = data.dt_text;
+                    //time = parseInt(data.dt);
                     console.log(data);
                     displayWeather(data);
                     getForecast(data.coord.lat, data.coord.lon);
@@ -81,7 +81,6 @@ function displayForecast(data) {
         var card = document.createElement('div');
         card.classList.add('forecast-card');
         card.innerHTML = `
-        <h2>${time}</h2>
         <p>Temperature: ${temp}</p>
         <p>Wind: ${wind} MPH</p>
         <p>Humidity: ${humidity} %</p>
