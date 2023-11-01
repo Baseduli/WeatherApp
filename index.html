@@ -21,19 +21,27 @@
                 <label for="search-input" class="text-4xl">Search for a City:</label>
                 <input id="search-input" class="border border-slate-400" type="text" placeholder="San Diego">
                 <button type="submit">Search</button>
-                <ul id="previousSearches">
-                </ul>
             </form>
         </div>
     </div>
-    <div>
-        <p id="city-forecast"></p>
+
+    <div class="flex container">
+        <ul id="previousSearches" class="flex-col space-x-1">
+        </ul>
     </div>
-    <div>
-        <p id="five-day">5-Day Forecast:</p>
+
+    <div class="md:container md:mx-auto">
+        <div>
+            <p id="city-forecast"></p>
+        </div>
     </div>
+
+    <div class="container h-40">
+        <div class="flex flex-row">
+            <p id="five-day">5-Day Forecast:</p>
+        </div>
     </div>
-    </div>
+
     <script src="main/assets/js/script.js"></script>
 </body>
 
